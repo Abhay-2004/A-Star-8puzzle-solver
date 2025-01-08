@@ -1,0 +1,68 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="100%" height="100%" fill="#f8f9fa"/>
+    
+    <!-- Title Container -->
+    <rect x="150" y="20" width="500" height="60" rx="10" fill="#4A90E2" stroke="#2171C7" stroke-width="2"/>
+    <text x="400" y="55" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold" font-size="20">A* Search 8-Puzzle Solver</text>
+
+    <!-- Three Heuristic Approaches -->
+    <!-- Tile Mismatch -->
+    <g transform="translate(50,120)">
+        <rect width="220" height="160" rx="10" fill="#FFE0B2" stroke="#FB8C00" stroke-width="2"/>
+        <text x="110" y="30" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="14">Tile Mismatch (h₁)</text>
+        <!-- Example Grid -->
+        <g transform="translate(60,50)">
+            <rect width="100" height="100" fill="none" stroke="#FB8C00" stroke-width="2"/>
+            <line x1="33" y1="0" x2="33" y2="100" stroke="#FB8C00" stroke-width="1"/>
+            <line x1="66" y1="0" x2="66" y2="100" stroke="#FB8C00" stroke-width="1"/>
+            <line x1="0" y1="33" x2="100" y2="33" stroke="#FB8C00" stroke-width="1"/>
+            <line x1="0" y1="66" x2="100" y2="66" stroke="#FB8C00" stroke-width="1"/>
+            <text x="50" y="130" text-anchor="middle" font-family="Arial" font-size="12">Count Mismatched</text>
+        </g>
+    </g>
+
+    <!-- Manhattan Distance -->
+    <g transform="translate(290,120)">
+        <rect width="220" height="160" rx="10" fill="#BBDEFB" stroke="#1976D2" stroke-width="2"/>
+        <text x="110" y="30" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="14">Manhattan Distance (h₂)</text>
+        <!-- Grid with Arrows -->
+        <g transform="translate(60,50)">
+            <rect width="100" height="100" fill="none" stroke="#1976D2" stroke-width="2"/>
+            <path d="M20,20 L80,80" stroke="#1976D2" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+            <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" 
+                    markerWidth="6" markerHeight="6" orient="auto">
+                    <path d="M0,0 L10,5 L0,10 z" fill="#1976D2"/>
+                </marker>
+            </defs>
+            <text x="50" y="130" text-anchor="middle" font-family="Arial" font-size="12">Path Distance</text>
+        </g>
+    </g>
+
+    <!-- Double Moves -->
+    <g transform="translate(530,120)">
+        <rect width="220" height="160" rx="10" fill="#C8E6C9" stroke="#388E3C" stroke-width="2"/>
+        <text x="110" y="30" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="14">Double Moves (h₃)</text>
+        <!-- Double Move Grid -->
+        <g transform="translate(60,50)">
+            <rect width="100" height="100" fill="none" stroke="#388E3C" stroke-width="2"/>
+            <path d="M10,50 L90,50" stroke="#388E3C" stroke-width="3" fill="none" marker-end="url(#arrow2)"/>
+            <defs>
+                <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" 
+                    markerWidth="6" markerHeight="6" orient="auto">
+                    <path d="M0,0 L10,5 L0,10 z" fill="#388E3C"/>
+                </marker>
+            </defs>
+            <text x="50" y="130" text-anchor="middle" font-family="Arial" font-size="12">Double Tile Movement</text>
+        </g>
+    </g>
+
+    <!-- A* Process -->
+    <g transform="translate(50,320)">
+        <rect width="700" height="100" rx="10" fill="#F5F5F5" stroke="#9E9E9E" stroke-width="2"/>
+        <text x="350" y="30" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="14">A* Search Process</text>
+        <text x="350" y="60" text-anchor="middle" font-family="Arial" font-size="12">OPEN List (Pending States) → Expand → CLOSED List (Explored States)</text>
+        <text x="350" y="80" text-anchor="middle" font-family="Arial" font-size="12">f(n) = g(n) + h(n) [Path Cost + Heuristic]</text>
+    </g>
+</svg>
